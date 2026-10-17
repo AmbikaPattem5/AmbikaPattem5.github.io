@@ -15,7 +15,7 @@ export function About() {
           <div className="reveal lg:col-span-3">
             <p className="text-lg leading-relaxed text-[var(--color-text-muted)]">{summary}</p>
             <p className="mt-4 leading-relaxed text-[var(--color-text-muted)]">
-              After professional experience at Infor and Ajackus, I&apos;ve been building practical React applications and
+              After professional experience at Infor, I&apos;ve been building practical React applications and
               strengthening TypeScript, Redux Toolkit, and frontend architecture through hands-on projects.
             </p>
           </div>

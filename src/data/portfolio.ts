@@ -11,7 +11,7 @@ export const personal = {
   availability: 'Open to React & Frontend Developer roles',
 }
 
-export const summary = `React Developer with 2+ years of professional frontend experience across Infor and Ajackus, complemented by ongoing independent React development. I turn requirements into functional, user-friendly interfaces—from component design and state management to REST API integration, validation, debugging, and responsive testing.`
+export const summary = `React Developer with 2+ years of professional frontend experience at Infor, complemented by ongoing independent React development. I turn requirements into functional, user-friendly interfaces—from component design and state management to REST API integration, validation, debugging, and responsive testing.`
 
 export const focusAreas = [
   'Requirements → UI → Components → State → APIs → Validation → Deployment',
@@ -61,17 +61,6 @@ export const experience: Experience[] = [
     ],
   },
   {
-    role: 'Associate Software Engineer',
-    company: 'Ajackus',
-    location: 'Remote',
-    period: 'Oct 2023 – Dec 2023',
-    highlights: [
-      'Developed and optimized modular UI components with React, JavaScript, HTML5, and CSS3.',
-      'Integrated RESTful APIs with engineering teams for seamless frontend-to-backend flows.',
-      'Code reviews, bug fixes, and performance work in an Agile environment.',
-    ],
-  },
-  {
     role: 'Frontend Developer',
     company: 'Infor',
     location: 'Hyderabad, India',
@@ -87,6 +76,7 @@ export const experience: Experience[] = [
 
 export type Project = {
   name: string
+  subtitle?: string
   description: string
   features: string[]
   stack: string[]
@@ -98,7 +88,44 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'TaskFlow',
+    subtitle: 'Project & Task Management · Team Collaboration',
+    description:
+      'TaskFlow is a project and task management application designed to help teams plan projects, organize tasks, assign responsibilities, and track work progress in one centralized platform. It aims to improve team collaboration by providing visibility into project activities, task priorities, deadlines, and overall progress. The application helps teams stay organized, manage workloads efficiently, and coordinate their work toward shared goals.',
+    features: [
+      'Project planning & multi-view task organization',
+      'Task assignment & workload distribution',
+      'Priority levels, deadlines & status tracking',
+      'Redux Toolkit & Context API state architecture',
+      'Team collaboration & centralized progress tracking',
+    ],
+    stack: ['React.js', 'TypeScript', 'React Router', 'Tailwind CSS', 'Redux Toolkit', 'Context API'],
+    liveUrl: 'https://ambikapattem5.github.io/taskflow',
+    sourceUrl: 'https://github.com/AmbikaPattem5/taskflow',
+    previewImage: 'taskflow-preview.jpg',
+    featured: true,
+  },
+  {
+    name: 'CareHub',
+    subtitle: 'Clinic Management · Healthcare Operations',
+    description:
+      'CareHub is a clinic management application designed to simplify and organize day-to-day healthcare operations. It helps manage patient and doctor information, schedule appointments, maintain consultation records, manage prescriptions, and handle billing activities. The platform brings essential clinic operations together in one place, helping streamline administrative tasks, improve information management, and support efficient clinic workflows.',
+    features: [
+      'Patient & doctor profile management',
+      'Appointment scheduling & consultation queue',
+      'Consultation records & prescription handling',
+      'Clinic billing & administrative workflows',
+      'Context API state management & responsive UI',
+    ],
+    stack: ['React.js', 'TypeScript', 'React Router', 'Tailwind CSS', 'Context API'],
+    liveUrl: 'https://ambikapattem5.github.io/carehub/',
+    sourceUrl: 'https://github.com/AmbikaPattem5/carehub',
+    previewImage: 'carehub-preview.jpg',
+    featured: true,
+  },
+  {
     name: 'FoodHub',
+    subtitle: 'Restaurant Ordering · Single-Page Application',
     description:
       'A responsive restaurant ordering single-page application with menu browsing, cart management, and a polished mobile-first experience.',
     features: [
@@ -108,7 +135,7 @@ export const projects: Project[] = [
       'Reusable component structure',
       'Deployed on GitHub Pages',
     ],
-    stack: ['React.js', 'JavaScript', 'React Router', 'Tailwind CSS', 'GitHub Pages'],
+    stack: ['React.js', 'TypeScript', 'React Router', 'Tailwind CSS', 'Context API'],
     liveUrl: 'https://ambikapattem5.github.io/foodhub/',
     sourceUrl: 'https://github.com/AmbikaPattem5/foodhub',
     previewImage: 'foodhub-preview.png',

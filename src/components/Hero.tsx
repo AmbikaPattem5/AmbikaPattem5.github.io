@@ -2,7 +2,7 @@ import { ArrowDown, MapPin, Sparkles } from 'lucide-react'
 import { personal } from '../data/portfolio'
 import { HeroShowcase } from './HeroShowcase'
 
-const stats = ['React.js', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS', 'REST APIs']
+const stats = ['React.js', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS', 'Context API']
 
 export function Hero() {
   return (

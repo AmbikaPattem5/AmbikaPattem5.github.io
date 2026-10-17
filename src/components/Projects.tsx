@@ -4,26 +4,30 @@ import { projects } from '../data/portfolio'
 import { GitHubIcon } from './icons/SocialIcons'
 import { SectionHeading } from './SectionHeading'
 
-function ProjectPreview({ image, name }: { image: string; name: string }) {
+function ProjectPreview({ image, name, liveUrl }: { image: string; name: string; liveUrl: string }) {
   const src = `${import.meta.env.BASE_URL}${image}`
+  const displayUrl = liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')
 
   return (
-    <div className="project-showcase reveal lg:col-span-5" style={{ '--reveal-delay': '120ms' } as CSSProperties}>
-      <div className="project-showcase-inner scan-effect">
+    <div
+      className="reveal flex items-center justify-center self-center lg:col-span-5"
+      style={{ '--reveal-delay': '120ms' } as CSSProperties}
+    >
+      <div className="w-full overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] shadow-xl transition-all duration-300 hover:border-[#475569] hover:shadow-2xl">
         <div className="browser-chrome">
           <span className="browser-dot bg-[#ff5f57]" />
           <span className="browser-dot bg-[#febc2e]" />
           <span className="browser-dot bg-[#28c840]" />
-          <span className="ml-2 truncate text-xs text-[var(--color-text-muted)]">ambikapattem5.github.io/foodhub</span>
+          <span className="ml-2 truncate text-xs text-[var(--color-text-muted)]">{displayUrl}</span>
         </div>
         <a
-          href="https://ambikapattem5.github.io/foodhub/"
+          href={liveUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="project-image-wrap block"
           aria-label={`${name} live preview`}
         >
-          <img src={src} alt={`${name} — restaurant ordering app homepage screenshot`} loading="lazy" />
+          <img src={src} alt={`${name} project preview screenshot`} loading="lazy" />
         </a>
       </div>
     </div>
@@ -46,9 +50,11 @@ export function Projects() {
           {featured.map((project) => (
             <article
               key={project.name}
-              className="reveal surface-card grid gap-8 overflow-hidden rounded-3xl p-6 md:p-8 lg:grid-cols-12 lg:gap-10"
+              className="reveal surface-card grid items-center gap-8 overflow-hidden rounded-3xl p-6 md:p-8 lg:grid-cols-12 lg:gap-10"
             >
-              {project.previewImage && <ProjectPreview image={project.previewImage} name={project.name} />}
+              {project.previewImage && (
+                <ProjectPreview image={project.previewImage} name={project.name} liveUrl={project.liveUrl} />
+              )}
 
               <div className="flex flex-col justify-between lg:col-span-7">
                 <div>
@@ -63,7 +69,9 @@ export function Projects() {
                   <h3 className="font-[family-name:var(--font-display)] text-3xl font-semibold md:text-4xl">
                     <span className="gradient-text">{project.name}</span>
                   </h3>
-                  <p className="mt-1 text-sm text-[var(--color-text-muted)]">Restaurant ordering · Single-page application</p>
+                  {project.subtitle && (
+                    <p className="mt-1 text-sm text-[var(--color-text-muted)]">{project.subtitle}</p>
+                  )}
 
                   <p className="mt-5 leading-relaxed text-[var(--color-text-muted)]">{project.description}</p>
 
